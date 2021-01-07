@@ -13,7 +13,7 @@ import com.devsuperior.dsdeliver.services.ProductService;
 
 @RestController
 @RequestMapping(value = "/products")
-public class ProdutoController {
+public class ProductController {
 
 	@Autowired
 	private ProductService service;
