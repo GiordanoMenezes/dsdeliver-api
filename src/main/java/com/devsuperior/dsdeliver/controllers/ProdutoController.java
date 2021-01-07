@@ -13,11 +13,11 @@ import com.devsuperior.dsdeliver.services.ProductService;
 
 @RestController
 @RequestMapping(value = "/products")
-public class ProductController {
+public class ProdutoController {
 
 	@Autowired
 	private ProductService service;
-	
+
 	@GetMapping
 	public ResponseEntity<List<ProductDTO>> getAllProducts() {
 		List<ProductDTO> listaprodutos = service.findAll();
