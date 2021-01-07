@@ -37,4 +37,12 @@ public class OrderService {
 		Order savedOrder = repository.save(order);
         return new OrderDTO(savedOrder);			
 	}
+	
+	@Transactional
+	public OrderDTO setDelivered(Long id) {
+		Order order = repository.getOne(id);
+		order.setStatus(OrderStatus.DEIVERED);
+		order = repository.save(order);
+		return new OrderDTO(order);
+	}
 }
