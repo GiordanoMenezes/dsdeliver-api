@@ -104,6 +104,14 @@ public class Order {
 	public Set<Product> getProducts() {
 		return products;
 	}
+	
+	public BigDecimal getTotal() {
+		BigDecimal sum = BigDecimal.ZERO;
+		for (Product p: this.getProducts()) {
+			sum = sum.add(p.getPrice());
+		}
+		return sum;
+	}
 
 	@Override
 	public int hashCode() {

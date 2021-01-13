@@ -23,6 +23,8 @@ public class OrderDTO {
 	
 	private OrderStatus status;
 	
+	private BigDecimal total;
+	
 	private List<ProductDTO> products = new ArrayList<>();
 	
 	public OrderDTO() {
@@ -36,6 +38,7 @@ public class OrderDTO {
 		this.longitude = o.getLongitude();
 		this.moment = o.getMoment();
 		this.status = o.getStatus();
+		this.total = o.getTotal();
 		this.products = o.getProducts().stream().map(p -> new ProductDTO(p)).collect(Collectors.toList());
 	}
 
@@ -97,9 +100,9 @@ public class OrderDTO {
 		this.products = products;
 	}
 
-	
-	
-	
+	public BigDecimal getTotal() {
+		return total;
+	}
 	
 	
 }
